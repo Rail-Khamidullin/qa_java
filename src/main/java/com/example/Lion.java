@@ -2,9 +2,16 @@ package com.example;
 
 import java.util.List;
 
+
 public class Lion {
 
+    private Feline feline;
+
     boolean hasMane;
+
+    public Lion(Feline feline) {
+        this.feline = feline;
+    }
 
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
@@ -15,8 +22,6 @@ public class Lion {
             throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
     }
-
-    Feline feline = new Feline();
 
     public int getKittens() {
         return feline.getKittens();
