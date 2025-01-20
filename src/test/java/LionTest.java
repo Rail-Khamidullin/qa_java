@@ -15,12 +15,12 @@ public class LionTest {
 
     // Пол
     String sex;
-    // Возвращаемое значение в зависмотсти от выбора пола
-    boolean bool;
+    // Возвращаемое значение в зависмости от выбора пола
+    boolean returnValue;
 
     public LionTest(String sex, boolean bool) {
         this.sex = sex;
-        this.bool = bool;
+        this.returnValue = bool;
     }
 
     @Before
@@ -31,6 +31,7 @@ public class LionTest {
     @Mock
     Feline feline;
 
+    // Проверим работу класса с разными входными данными
     @Parameterized.Parameters
     public static Object[][] setSex() {
         return new Object[][]{
@@ -43,20 +44,26 @@ public class LionTest {
     @Test
     public void lionTest() throws Exception {
 
+        // Для полов Самец и Самка
         if (sex.equals("Самец") || sex.equals("Самка")) {
 
-
+            // Экземпляр класса
             Lion lion = new Lion(sex, feline);
 
-            Boolean result = lion.doesHaveMane();
-            assertEquals(bool, result);
+            // Поле для сохранения результата
+            boolean result = lion.doesHaveMane();
+            assertEquals(returnValue, result);
 
+            // Проверка работы метода getFood
             lion.getFood();
             Mockito.verify(feline).getFood("Хищник");
 
+            // Проверка метода getKittens
             Mockito.when(feline.getKittens()).thenReturn(1);
             int kittensResult = lion.getKittens();
             assertEquals(1, kittensResult);
+
+            // В случае, если пол будет иной выбросит исключение
         } else {
             Exception exception = assertThrows(Exception.class, () -> {
                 new Lion(sex, feline);
