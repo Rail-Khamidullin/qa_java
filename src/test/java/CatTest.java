@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 public class CatTest {
 
     @Spy
-    Cat cat = new Cat(new Feline());
+    private Cat cat = new Cat(new Feline());
 
     @Test
     public void catTest() throws Exception {

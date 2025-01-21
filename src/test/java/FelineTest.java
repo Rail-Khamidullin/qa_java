@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 public class FelineTest {
 
     @Spy
-    Feline feline;
+    private Feline feline;
 
     @Test
     public void felineTest() throws Exception {

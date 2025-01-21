@@ -14,9 +14,9 @@ import static org.junit.Assert.assertThrows;
 public class LionTest {
 
     // Пол
-    String sex;
+    private String sex;
     // Возвращаемое значение в зависмости от выбора пола
-    boolean returnValue;
+    private boolean returnValue;
 
     public LionTest(String sex, boolean bool) {
         this.sex = sex;
