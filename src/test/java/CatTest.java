@@ -14,15 +14,17 @@ public class CatTest {
     @Spy
     private Cat cat = new Cat(new Feline());
 
+    // Проверка метода getSound
     @Test
-    public void catTest() throws Exception {
-
-        // Проверка метода getSound
+    public void checkCatSoundTest() throws Exception {
         String catSay = cat.getSound();
         Mockito.verify(cat).getSound();
         assertEquals("Мяу", catSay);
+    }
 
-        // Проверка метода getFood
+    // Проверка метода getFood
+    @Test
+    public void checkCatGetFoodTest() throws Exception {
         cat.getFood();
         assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
     }

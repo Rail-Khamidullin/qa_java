@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="LionTest" time="0.044" tests="3" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="ParameterLionTest" time="0.035" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -55,7 +55,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="lionExceptionTest" classname="LionTest" time="0.009"/>
-  <testcase name="lionGetFoodTest" classname="LionTest" time="0.002"/>
-  <testcase name="lionGetKittensTest" classname="LionTest" time="0.006"/>
+  <testcase name="lionTest[0]" classname="ParameterLionTest" time="0.015"/>
+  <testcase name="lionTest[1]" classname="ParameterLionTest" time="0.0"/>
 </testsuite>

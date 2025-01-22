@@ -13,20 +13,25 @@ public class FelineTest {
     @Spy
     private Feline feline;
 
+    // Проверка работы метода eatMeat
     @Test
-    public void felineTest() throws Exception {
-
-        // Проверка работы метода eatMeat
+    public void felineEatMeatTest() throws Exception {
         List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
         Mockito.when(feline.eatMeat()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
         List<String> actualFood = feline.eatMeat();
         assertEquals(expectedFood, actualFood);
+    }
 
-        // Проверка работы метода getFamily
+    // Проверка работы метода getFamily
+    @Test
+    public void felineGetFamilyTest() throws Exception {
         Mockito.when(feline.getFamily()).thenReturn("Кошачьи");
         assertEquals("Кошачьи", feline.getFamily());
+    }
 
-        // Проверка работы метода getKittens()
+    // Проверка работы метода getKittens()
+    @Test
+    public void felineGetKittensTest() throws Exception {
         feline.getKittens();
         // Проверка, что внутри метода getKittens вызвался метод getKittens() с нужным параметром
         Mockito.verify(feline, Mockito.times(1)).getKittens(1);
